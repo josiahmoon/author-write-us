@@ -2,7 +2,7 @@ body {
     width: 800px;
     margin: 0 auto;
     font-family: 'Open Sans', sans-serif;
-    background-image: url("https://images.alphacoders.com/203/thumb-1920-203381.jpg");
+    background-image: url("http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-14.jpg");
 }
 .container {
     width: 600px;
@@ -31,7 +31,7 @@ fieldset {
     width: 100%;
     font-size: 25px;
     border:0px;
-    outline: none;
+    outweather: none;
     width: 100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -51,7 +51,7 @@ fieldset {
     border-bottom:1px solid #ddd;
 }
 .ghost-button {
-    background-color: transparent;
+    background-color: FloralWhite;
     border:2px solid #ddd;
     padding:10px 30px;
     width: 100%;
