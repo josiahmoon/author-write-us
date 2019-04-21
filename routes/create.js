@@ -33,7 +33,3 @@ router.post('/create', (req, res) => {
 });
 
 module.exports = router;
-
-// app.listen(3499, function () {
-//     console.log('Listening on port 3499...')
-// });
