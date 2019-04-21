@@ -5,9 +5,9 @@ const request = require('request');
 
 const apiKey = '659e35adac5f4f672f5ddc64be6611f1';
 
-//router.use(express.static('public'));
-//router.use(bodyParser.urlencoded({ extended: true }));
-//router.set('view engine', 'ejs');
+router.use(express.static('public'));
+router.use(bodyParser.urlencoded({ extended: true }));
+router.set('view engine', 'ejs');
 
 router.get('/create', (req, res) => {
     res.render('AWU.ejs', {weather: null, error: null});
