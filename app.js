@@ -5,8 +5,6 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 
-// HELLO FROM GITHUB BABY
-
 const app = express();
 
 // Passport Config
