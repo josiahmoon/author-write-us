@@ -1,4 +1,25 @@
 <h1 class="mt-4">Choose a Topic</h1>
-<a href="/story/create" class="btn btn-info mb-1">poo</a>
-<a href="/story/create" class="btn btn-primary mb-1">pee</a>
-<a href="/users/logout" class="btn btn-secondary">Logout</a>
+<a href="/users/logout" class="btn btn-secondary mb-2">Logout</a>
+
+<html>
+<script>
+    function story_topics() {
+        var myList=document.getElementById("myList");
+        document.getElementById("topic").value=myList.options[myList.selectedIndex].text;
+    }
+</script>
+
+<body>
+<form>
+    Select your topic:
+    <select id="myList" onchange="story_topics()">
+        <option>Adventure</option>
+        <option>Scary Story</option>
+        <option>Embarrassing Moment</option>
+        <option>Thanos' Anus</option>
+        <option>Poo</option>
+    </select>
+<p>Your topic is: <input type="text" id="topic" size="20"></p>
+</form>
+</body>
+</html>
