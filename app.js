@@ -5,6 +5,8 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 
+// HELLO FROM INTELLIJ JOSIAH THANOS ANUS!!!!
+
 const app = express();
 
 // Passport Config
