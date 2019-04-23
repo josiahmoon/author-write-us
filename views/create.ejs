@@ -7,10 +7,14 @@
     function story_topics() {
         var myList = document.getElementById("myList");
         document.getElementById("topic").value = myList.options[myList.selectedIndex].text;
+        var topic = document.getElementById("topic").value;
     }
     function custom_topic() {
         var choice = document.getElementById("choice");
         document.getElementById("topic").value = choice.value;
+    }
+    function get_topic() {
+        var topic = document.getElementById("topic").toString();
     }
 </script>
 
@@ -27,9 +31,10 @@
         </select></p>
 
     <p><font color="darkslategrey">Custom: <input id="choice" type="text">
-            <button onclick="custom_topic()">Select</button>
+            <button onclick="custom_topic()" type="button">Select</button>
 
     <p><font color="darkslategrey">Your topic is: </font><input type="text" id="topic" size="20"></p>
+    <button onclick="get_topic()" type="button">Create Room</button>
 </form>
 
 </body>
