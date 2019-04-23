@@ -1,5 +1,5 @@
-<h1 class="mt-4">Choose a Topic</h1>
 <a href="/users/logout" class="btn btn-secondary mb-2">Logout</a>
+<h1 class="mt-4">Choose a Topic</h1>
 
 <html>
 <script>
@@ -9,17 +9,21 @@
     }
 </script>
 
-<body>
+<body background="http://sfwallpaper.com/images/wallpaper-wood-hd-13.jpg">
+
 <form>
-    Select your topic:
-    <select id="myList" onchange="story_topics()">
-        <option>Adventure</option>
-        <option>Scary Story</option>
-        <option>Embarrassing Moment</option>
-        <option>Thanos' Anus</option>
-        <option>Poo</option>
-    </select>
-<p>Your topic is: <input type="text" id="topic" size="20"></p>
+    <p><font color="darkslategrey">Select your topic: </font>
+        <select id="myList" onchange="story_topics()">
+            <option>Adventure</option>
+            <option>Scary Story</option>
+            <option>Embarrassing Moment</option>
+            <option>Thanos' Anus</option>
+            <option>Poo</option>
+        </select></p>
+
+    <p><font color="darkslategrey">Custom: </font><input type="text" size="20"></p>
+    <p><font color="darkslategrey">Your topic is: </font><input type="text" id="topic" size="20"></p>
 </form>
+
 </body>
 </html>
