@@ -52,6 +52,9 @@ app.use((req, res, next) => {
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 app.use('/story', require('./routes/story'));
+app.use('https://author-write-us.mybluemix.net/', require('./routes/index'));
+app.use('https://author-write-us.mybluemix.net/users', require('./routes/users'));
+app.use('https://author-write-us.mybluemix.net/story', require('./routes/story'));
 
 const PORT = process.env.PORT || 3499;
 

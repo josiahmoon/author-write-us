@@ -8,9 +8,11 @@ const User = require('../models/User');
 
 // Create Page
 router.get('/create', (req, res) => res.render('create'))
+router.get('https://author-write-us.mybluemix.net/create', (req, res) => res.render('create'))
 
 // Join Page
 router.get('/join', (req, res) => res.render('join'))
+router.get('https://author-write-us.mybluemix.net/join', (req, res) => res.render('join'))
 
 // Create Handle
 router.post('/create', (req, res) => {
