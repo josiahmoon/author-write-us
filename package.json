@@ -8,7 +8,7 @@
     "dev": "nodemon app.js"
   },
   "keywords": [],
-  "author": "josiah moon",
+  "author": "Josiah Moon, Grant Bowman",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
