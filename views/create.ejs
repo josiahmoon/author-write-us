@@ -5,8 +5,12 @@
 <html>
 <script>
     function story_topics() {
-        var myList=document.getElementById("myList");
-        document.getElementById("topic").value=myList.options[myList.selectedIndex].text;
+        var myList = document.getElementById("myList");
+        document.getElementById("topic").value = myList.options[myList.selectedIndex].text;
+    }
+    function custom_topic() {
+        var choice = document.getElementById("choice");
+        document.getElementById("topic").value = choice.value;
     }
 </script>
 
@@ -22,7 +26,9 @@
             <option>Poo</option>
         </select></p>
 
-    <p><font color="darkslategrey">Custom: </font><input type="text" size="20"></p>
+    <p><font color="darkslategrey">Custom: <input id="choice" type="text">
+            <button onclick="custom_topic()">Select</button>
+
     <p><font color="darkslategrey">Your topic is: </font><input type="text" id="topic" size="20"></p>
 </form>
 
