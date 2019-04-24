@@ -2,12 +2,13 @@ const express = require('express')
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+var topic = "";
 
 // User model
 const User = require('../models/User');
 
 // Create Page
-router.get('/create', (req, res) => res.render('create'))
+router.get('/create', (req, res) => res.render('create', {topic:topic}))
 //router.get('https://author-write-us.mybluemix.net/create', (req, res) => res.render('create'))
 
 // Viewable Stories Page
@@ -16,6 +17,7 @@ router.get('/viewables', (req, res) => res.render('viewables'))
 
 // Create Handle
 router.post('/create', (req, res) => {
+    console.log("redirect");
     res.redirect('/create');
 });
 
@@ -32,11 +34,18 @@ router.get('/logout', (req, res) => {
 });
 
 // Story Page
-router.get('/room', (req, res) => res.render('room'))
+router.get('/room', (req, res) => res.render('room', {topic:topic}))
 
 // Story Handle
 router.post('/room', (req, res) => {
-    res.redirect('/room');
+    res.redirect('/room', {topic:topic});
 });
+
+router.post('/topic', (req, res) => {
+    topic = req.body.topic;
+    console.log(topic);
+    if(typeof topic == undefined || topic == "") topic = "Ant man goes up Thanos'...";
+    res.render('create', {topic:topic});
+})
 
 module.exports = router;
