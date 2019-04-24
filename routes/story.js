@@ -83,6 +83,10 @@ router.post('/upload', (req, res) => {
             client.close();
         });
     });
+    res.redirect('/story/submitted');
 });
+
+// Submitted Handle
+router.get('/submitted', (req, res) => res.render('submitted'));
 
 module.exports = router;
