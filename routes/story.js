@@ -36,7 +36,7 @@ router.get('/logout', (req, res) => {
 // Story Page
 router.get('/room', (req, res) => res.render('room', {topic:topic}))
 
-// Story Handle
+// Room Handle
 router.post('/room', (req, res) => {
     res.redirect('/room', {topic:topic});
 });
@@ -45,7 +45,7 @@ router.post('/topic', (req, res) => {
     topic = req.body.topic;
     console.log(topic);
     if(typeof topic == undefined || topic == "") topic = "Ant man goes up Thanos'...";
-    res.render('create', {topic:topic});
+    res.render('room', {topic:topic, user:req.user.name});
 })
 
 module.exports = router;
