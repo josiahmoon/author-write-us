@@ -12,14 +12,10 @@
         doc.save('your-story.pdf');
 
         // Upload PDF to database
-        const PDF = require('../models/PDF');
-        const newPDF = new PDF({
-            name,
-            doc
+        const newPDF = new PDF ({
+           name,
+           doc
         });
-        newPDF.name = name;
-        newPDF.story = doc;
-        // Save PDF
         newPDF.save()
     }
 </script>
