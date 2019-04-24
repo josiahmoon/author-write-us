@@ -17,4 +17,4 @@ const StorySchema = new mongoose.Schema({
 
 const Story = mongoose.model('Story', StorySchema);
 
-module.exports = PDF;
+module.exports = Story;
