@@ -10,18 +10,18 @@ const User = require('../models/User');
 router.get('/create', (req, res) => res.render('create'))
 //router.get('https://author-write-us.mybluemix.net/create', (req, res) => res.render('create'))
 
-// Join Page
-router.get('/join', (req, res) => res.render('join'))
-//router.get('https://author-write-us.mybluemix.net/join', (req, res) => res.render('join'))
+// Viewable Stories Page
+router.get('/viewables', (req, res) => res.render('viewables'))
+//router.get('https://author-write-us.mybluemix.net/viewables', (req, res) => res.render('viewables'))
 
 // Create Handle
 router.post('/create', (req, res) => {
     res.redirect('/create');
 });
 
-// Join Handle
-router.post('/join', (req, res) => {
-    res.redirect('/join');
+// Viewable Stories Handle
+router.post('/viewables', (req, res) => {
+    res.redirect('/viewables');
 });
 
 // Logout Handle
