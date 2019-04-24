@@ -17,7 +17,7 @@
 
 <body background="http://sfwallpaper.com/images/wallpaper-wood-hd-13.jpg">
 
-<form>
+<form action="story/">
     <p><font color="darkslategrey">Select your topic: </font>
         <select id="myList" onchange="story_topics()">
             <option>Adventure</option>
@@ -35,5 +35,21 @@
     <a href="/story/room" class="btn btn-primary">Start Writing</a>
 </form>
 
+<div class="card card-body">
+    <form action="/story/topic" method="POST">
+        <div class="form-group">
+            <label for="topic"></label>
+            <input 
+                type="topic"
+                id="topic"
+                name="topic"
+                class="form-control"
+                placeholder="enter topic"
+                value = "<%- topic %>""
+            />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Continue</button>
+    </form>
+</div>
 </body>
 </html>
