@@ -46,9 +46,10 @@ router.post('/room', (req, res) => {
 
 router.post('/topic', (req, res) => {
     topic = req.body.topic;
-    console.log(req.user.name);
+    var name;
     if(typeof topic == undefined || topic == "") topic = "Ant man goes up Thanos'...";
-    res.render('room', {topic:topic, user:req.user.name});
+    (req.user == undefined) ? name = "Anonymous" : name = req.user.name;
+    res.render('room', {topic:topic, user:name});
 })
 
 module.exports = router;
