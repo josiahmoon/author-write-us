@@ -1,7 +1,8 @@
 <a href="/users/logout" class="btn btn-secondary">Logout</a>
 <a href="/story/create" class="btn btn-warning mb-1">Create Different Story</a>
 <a href="/story/viewables" class="btn btn-info mb-1">Viewable Stories</a>
-<h1 class="mt-4 mb-4">topic: <%=topic%></h1>
+<h1 class="mt-4 mb-1">Topic: <%=topic%></h1>
+<h2 class="mb-4">author: <%=user%></h2>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
 
@@ -11,13 +12,6 @@
         var doc = new jsPDF();
         doc.text(20,20,document.getElementById("story").value);
         doc.save('your-story.pdf');
-
-        // Upload PDF to database
-        const newPDF = new PDF ({
-           name,
-           doc
-        });
-        newPDF.save()
     }
 </script>
 
@@ -25,7 +19,6 @@
 
 <form>
     <h1 class="lead mb-1">Write your story here: </h1>
-    <h2>author: <%=user%></h2>
     <p><textarea id="story" rows="15" cols="100"></textarea></p>
 
     <button onclick="download_pdf()" type="button">Download PDF</button>
