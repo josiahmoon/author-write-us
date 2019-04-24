@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const mongoose = require('mongoose');
 var topic = "";
 
 // User model
@@ -23,6 +24,8 @@ router.post('/create', (req, res) => {
 
 // Viewable Stories Handle
 router.post('/viewables', (req, res) => {
+    var newChoice = new ChoiceModel();
+
     res.redirect('/viewables');
 });
 
