@@ -45,7 +45,7 @@ router.post('/topic', (req, res) => {
     topic = req.body.topic;
     console.log(topic);
     if(typeof topic == undefined || topic == "") topic = "Ant man goes up Thanos'...";
-    res.render('create', {topic:topic});
+    res.render('room', {topic:topic});
 })
 
 module.exports = router;
