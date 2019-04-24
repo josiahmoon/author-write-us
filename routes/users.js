@@ -8,11 +8,11 @@ const User = require('../models/User');
 
 // Login Page
 router.get('/login', (req, res) => res.render('login'))
-router.get('https://author-write-us.mybluemix.net/login', (req, res) => res.render('login'))
+//router.get('https://author-write-us.mybluemix.net/login', (req, res) => res.render('login'))
 
 // Register Page
 router.get('/register', (req, res) => res.render('register'))
-router.get('https://author-write-us.mybluemix.net/register', (req, res) => res.render('register'))
+//router.get('https://author-write-us.mybluemix.net/register', (req, res) => res.render('register'))
 
 // Register Handle
 router.post('/register', (req, res) => {

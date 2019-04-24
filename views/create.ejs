@@ -13,9 +13,6 @@
         var choice = document.getElementById("choice");
         document.getElementById("topic").value = choice.value;
     }
-    function get_topic() {
-        var topic = document.getElementById("topic").toString();
-    }
 </script>
 
 <body background="http://sfwallpaper.com/images/wallpaper-wood-hd-13.jpg">
@@ -34,7 +31,8 @@
             <button onclick="custom_topic()" type="button">Select</button>
 
     <p><font color="darkslategrey">Your topic is: </font><input type="text" id="topic" size="20"></p>
-    <button onclick="get_topic()" type="button">Create Room</button>
+
+    <a href="/story/room" class="btn btn-primary">Create Room</a>
 </form>
 
 </body>
