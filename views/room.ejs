@@ -11,9 +11,13 @@
         var doc = new jsPDF();
         doc.text(20,20,document.getElementById("story").value);
         doc.save('your-story.pdf');
-    }
-    function publish_story() {
 
+        // Upload PDF to database
+        const newPDF = new PDF ({
+           name,
+           doc
+        });
+        newPDF.save()
     }
 </script>
 
@@ -22,11 +26,9 @@
 <form>
     <h1 class="lead mb-1">Write your story here: </h1>
     <h2>author: <%=user%></h2>
-    <p><textarea id="story" rows="15" cols="100">"></textarea></p>
+    <p><textarea id="story" rows="15" cols="100"></textarea></p>
 
     <button onclick="download_pdf()" type="button">Download PDF</button>
-
-    <button onclick="publish_story()" type="button">Publish</button>
 </form>
 
 </body>
