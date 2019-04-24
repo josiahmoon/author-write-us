@@ -10,6 +10,17 @@
         var doc = new jsPDF();
         doc.text(20,20,document.getElementById("story").value);
         doc.save('your-story.pdf');
+
+        // Upload PDF to database
+        const PDF = require('../models/PDF');
+        const newPDF = new PDF({
+            name,
+            doc
+        });
+        newPDF.name = name;
+        newPDF.story = doc;
+        // Save PDF
+        newPDF.save()
     }
 </script>
 
