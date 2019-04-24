@@ -34,18 +34,18 @@ router.get('/logout', (req, res) => {
 });
 
 // Story Page
-router.get('/room', (req, res) => res.render('room', {topic:topic}))
+router.get('/room', (req, res) => res.render('room', {topic:topic, user:req.name}))
 
 // Story Handle
 router.post('/room', (req, res) => {
-    res.redirect('/room', {topic:topic});
+    res.redirect('/room', {topic:topic, user:req.name});
 });
 
 router.post('/topic', (req, res) => {
     topic = req.body.topic;
-    console.log(topic);
+    console.log(req.user.name);
     if(typeof topic == undefined || topic == "") topic = "Ant man goes up Thanos'...";
-    res.render('room', {topic:topic});
+    res.render('room', {topic:topic, user:req.user.name});
 })
 
 module.exports = router;
