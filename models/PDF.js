@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
-const StorySchema = new mongoose.Schema({
+const PDFSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
     },
     story: {
-        type: String,
+        type: jsPDF,
         required: true
     },
     date: {
@@ -15,6 +15,6 @@ const StorySchema = new mongoose.Schema({
     }
 });
 
-const Story = mongoose.model('Story', StorySchema);
+const PDF = mongoose.model('PDF', PDFSchema);
 
-module.exports = Story;
+module.exports = PDF;
