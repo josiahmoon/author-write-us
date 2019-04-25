@@ -40,10 +40,8 @@ router.get('/viewables', (req, res) => {
             resultArray.push(doc);
         }, function(){
             cursor.close();
-            client.close();
             res.render('viewables', {items: resultArray});
         });
-        client.close();
     });
 })
 //router.get('https://author-write-us.mybluemix.net/viewables', (req, res) => res.render('viewables'))

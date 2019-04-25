@@ -3,12 +3,22 @@
 
 <h1 class="mt-4">Viewable Stories</h1>
 
-<ul>
-        <%for (var result in items){%>
-          <li>Name:<%=items[result].name%>  Story:<%=items[result].story%></li>    
-        <%}%>
-</ul>
-
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>View Story</th>
+        <th>Download</th>
+    </tr>
+    <%for (var result in items){%>
+        <tr>
+          <td><%=items[result].title%></td>
+          <td><%=items[result].name%></td>
+          <td><button>View</button></td>
+          <td><button>PDF</button></td>
+        </tr>
+    <%}%>
+</table>
 
 
 <html>
