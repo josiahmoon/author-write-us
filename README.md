@@ -1,3 +1,3 @@
 # Author-Write-Us
 CS 252 Lab 6 web application.
-Users are given a topic and can add a string of input, contributing a line to a story.
+Users select their topic and write a story. They can then download a PDF of their story or share it with the world!
