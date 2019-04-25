@@ -8,7 +8,7 @@ const assert = require('assert');
 var topic = "";
 
 //Story model
-const Story = require("../models/Story");
+//const Story = require("../models/Story");
 
 // Connect to Mongo
 const uri = require('../config/keys').MongoURI;
@@ -79,14 +79,12 @@ router.post('/topic', (req, res) => {
 
 // Upload Handle
 router.post('/upload', (req, res) => {
+    title = req.body.title;
     var name;
     (req.user == undefined) ? name = "Anonymous" : name = req.user.name;
-    const newStory = new Story({
-        name : name,
-        story : req.body.story
-    })
     var item = {
         name: name,
+        title: title,
         story: req.body.story
     };
 
