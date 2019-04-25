@@ -7,6 +7,9 @@ const passport = require('passport');
 
 const app = express();
 
+//url thingy?
+const oh = require('./config/overhead');
+
 // Passport Config
 require('./config/passport')(passport);
 
@@ -55,6 +58,8 @@ app.use('/story', require('./routes/story'));
 //app.use('https://author-write-us.mybluemix.net/', require('./routes/index'));
 //app.use('https://author-write-us.mybluemix.net/users', require('./routes/users'));
 //app.use('https://author-write-us.mybluemix.net/story', require('./routes/story'));
+
+console.log(oh.url + '/');
 
 const PORT = process.env.PORT || 3499;
 

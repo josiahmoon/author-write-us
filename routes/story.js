@@ -17,6 +17,10 @@ const client = new MongoClient(uri, { useNewUrlParser: true });
 // User model
 const User = require('../models/User');
 
+function getStory(story) {
+    console.log(story);
+};
+
 // Create Page
 router.get('/create', (req, res) => res.render('create', {topic:topic}))
 //router.get('https://author-write-us.mybluemix.net/create', (req, res) => res.render('create'))
@@ -33,7 +37,7 @@ router.get('/viewables', (req, res) => {
     var resultArray = [];
     client.connect(err => {
         var db = client.db('test');
-        var cursor = db.collection('stories').find();
+        var cursor = db.collection('stories').find().sort({name: 1});
         cursor.forEach((doc, err) => {
             console.log(doc);
             assert.equal(null, err);

@@ -2,20 +2,27 @@
 <a href="/story/create" class="btn btn-warning mb-1">Create Story</a>
 
 <h1 class="mt-4">Viewable Stories</h1>
+<script>
+    function getStory() {
+        console.log("view");
+    }
+    console.log("view2");
+</script>
 
-<table>
+
+<table frame="border" rules="all" bgcolor="lightgray" cellpadding="5">
     <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>View Story</th>
-        <th>Download</th>
+        <th><font color="blue">Row</font></th>
+        <th><font color="blue">Author</font></th>
+        <th><font color="blue">Title</font></th>
+        <th><font color="blue">Story</font></th>
     </tr>
     <%for (var result in items){%>
         <tr>
-          <td><%=items[result].title%></td>
-          <td><%=items[result].name%></td>
-          <td><button>View</button></td>
-          <td><button>PDF</button></td>
+            <td><font color="maroon"><%=result%></font></td>
+            <td><font color="maroon"><%=items[result].name%></font></td>
+            <td><font color="maroon"><%=items[result].title%></font></td>
+            <td><font color="maroon"><%=items[result].story%></font></td>
         </tr>
     <%}%>
 </table>
@@ -24,4 +31,6 @@
 <html>
 <body background="http://sfwallpaper.com/images/wallpaper-wood-hd-13.jpg">
 </body>
+<br>
+<br>
 </html>
