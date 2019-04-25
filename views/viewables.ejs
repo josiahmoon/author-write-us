@@ -3,6 +3,12 @@
 
 <h1 class="mt-4">Viewable Stories</h1>
 
+<ul>
+        <%for (var result in items){%>
+          <li>Name:<%=items[result].name%>  Story:<%=items[result].story%></li>    
+        <%}%>
+</ul>
+
 
 
 <html>

@@ -7,6 +7,9 @@ const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 var topic = "";
 
+//Story model
+const Story = require("../models/Story");
+
 // Connect to Mongo
 const uri = require('../config/keys').MongoURI;
 const client = new MongoClient(uri, { useNewUrlParser: true });
@@ -26,14 +29,17 @@ router.post('/create', (req, res) => {
 
 // Viewable Stories Page
 router.get('/viewables', (req, res) => {
+    console.log("get viewables");
     var resultArray = [];
     client.connect(err => {
         var db = client.db('test');
         var cursor = db.collection('stories').find();
         cursor.forEach((doc, err) => {
+            console.log(doc);
             assert.equal(null, err);
             resultArray.push(doc);
         }, function(){
+            cursor.close();
             client.close();
             res.render('viewables', {items: resultArray});
         });
@@ -44,6 +50,7 @@ router.get('/viewables', (req, res) => {
 
 // Viewable Stories Handle
 router.post('/viewables', (req, res) => {
+    console.log("post viewables");
     res.redirect('/story/viewables');
 });
 
@@ -72,8 +79,14 @@ router.post('/topic', (req, res) => {
 
 // Upload Handle
 router.post('/upload', (req, res) => {
+    var name;
+    (req.user == undefined) ? name = "Anonymous" : name = req.user.name;
+    const newStory = new Story({
+        name : name,
+        story : req.body.story
+    })
     var item = {
-        name: req.user.name,
+        name: name,
         story: req.body.story
     };
 
