@@ -15,7 +15,10 @@ const client = new MongoClient(uri, { useNewUrlParser: true });
 const User = require('../models/User');
 
 // Create Page
-router.get('/create', (req, res) => res.render('create', {topic:topic}))
+router.get('/create', (req, res) => {
+    topic = "";
+    res.render('create', {topic:topic})
+})
 //router.get('https://author-write-us.mybluemix.net/create', (req, res) => res.render('create'))
 
 // Create Handle
@@ -63,9 +66,10 @@ router.post('/room', (req, res) => {
 
 router.post('/topic', (req, res) => {
     topic = req.body.topic;
-    console.log(req.user.name);
+    var name;
     if(typeof topic == undefined || topic == "") topic = "Ant man goes up Thanos'...";
-    res.render('room', {topic:topic, user:req.user.name});
+    (req.user == undefined) ? name = "Anonymous" : name = req.user.name;
+    res.render('room', {topic:topic, user:name});
 })
 
 // Upload Handle

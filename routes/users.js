@@ -16,11 +16,11 @@ router.get('/register', (req, res) => res.render('register'))
 
 // Register Handle
 router.post('/register', (req, res) => {
-    const { name, email, password, password2 } = req.body;
+    const { name, password, password2 } = req.body;
     let errors = [];
 
     // Check required fields
-    if(!name || !email || !password || !password2) {
+    if(!name || !password || !password2) {
         errors.push({ msg: 'Please fill in all fields'});
     }
 
@@ -38,28 +38,25 @@ router.post('/register', (req, res) => {
         res.render('register', {
            errors,
            name,
-           email,
            password,
            password2
         });
     } else {
         // Validation passed:
-        User.findOne({ email: email })
+        User.findOne({ name: name })
             .then(user => {
                 if(user) {
                     // User exists:
-                    errors.push({ msg: 'Email is already registered'});
+                    errors.push({ msg: 'name is already registered'});
                     res.render('register', {
                         errors,
                         name,
-                        email,
                         password,
                         password2
                     });
                 } else {
                     const newUser = new User({
                         name,
-                        email,
                         password
                     });
 
